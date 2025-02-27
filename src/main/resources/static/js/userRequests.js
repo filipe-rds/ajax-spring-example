@@ -17,6 +17,7 @@ function searchUsers(name = "", page = currentPage) {
     $.ajax({
         url: `/search?name=${encodeURIComponent(name)}&page=${page}&size=${pageSize}`, // Faz a requisição para a API com nome e paginação
         method: "GET",
+        dataType: "json",
         success: function(response) {
             $("#userTableBody").empty(); // Remove os dados antigos da tabela antes de preencher com novos
 
